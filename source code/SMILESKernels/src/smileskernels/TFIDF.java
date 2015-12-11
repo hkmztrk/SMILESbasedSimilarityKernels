@@ -44,13 +44,11 @@ public class TFIDF {
     
     private double [] createFeatureVector(String smi1)
     {
-        
         double [] featureVector = new double[allLingos.size()];
 
          Map<String, Integer> smi_splitted_terms = LINGO.findLINGOs(smi1, q);
          
          Integer i =0;
-         Double sum = (double)0;
          
            for (Map.Entry<String, Integer> term_ : allLingos.entrySet()) {
                String lingo_term = term_.getKey();
@@ -58,44 +56,30 @@ public class TFIDF {
                if(smi_splitted_terms.containsKey(lingo_term))
                {
                    Integer freq = smi_splitted_terms.get(lingo_term);
-                  // Double tf = Double.valueOf(freq) / Double.valueOf(smi_splitted_terms.size());
-                   Double tf = Double.valueOf(freq);
+                   Double tf = 1 + Math.log10(freq);
                   
                    Double idf = lingo_idfs.get(lingo_term);
                    
-                    Double tf_idf = tf * idf; /*TO DO: NORMALIZE*/
+                    Double tf_idf = tf * idf; 
                     featureVector[i]= tf_idf;
                     
-                      sum = sum + ( tf_idf * tf_idf);
 
                }
                else
                {
                    featureVector[i]= 0;
-                   sum = sum + 0;
                }
-               
-               
+                
                i++;
            }
-           
-        
-           Double denom = Math.sqrt(sum);
-           
-           for (int j = 0; j < featureVector.length; j++) {
-            
-              featureVector[j] = featureVector[j] / denom;
-        }
-           
-        
-        
+             
         return featureVector;
         
        
     }
     
     
-    private Map<String, Double> findIDF(ArrayList<String> documents ) // terms = lingos documents = smiles
+    private Map<String, Double> findIDF(ArrayList<String> documents ) // terms = lingos, documents = smiles
     {
         
         Map<String, Double> term_idf_table = new LinkedHashMap<>();
@@ -129,6 +113,8 @@ public class TFIDF {
     public double cosineSimilarity(double [] vect1,double [] vect2)
     {
         double sim_score =0;
+        double denoma=0;
+        double denomb=0;
 
         if(vect1.length == vect2.length)
         {
@@ -136,26 +122,28 @@ public class TFIDF {
             for (int i = 0; i < vect1.length; i++) {
                 
                sim_score = sim_score + (vect1[i] * vect2[i]);
+               denoma = denoma + Math.pow(vect1[i],2);
+               denomb = denomb + Math.pow(vect2[i],2);
             }
         
         }
         
-        return sim_score;
+        double denomf = Math.sqrt(denoma * denomb);
+        
+        return Double.valueOf(sim_score/denomf);
      
     }
     
     private void writeIDFtable() throws IOException
     {
-         FileWriter fw = new FileWriter("C:\\Users\\Hakimee\\Desktop\\"+"doc_num_ic.txt");
+         FileWriter fw = new FileWriter("doc_num_ic.txt");
         PrintWriter pw = new PrintWriter(fw);
         
          for (Map.Entry<String, Integer> term_ : term_doc_count.entrySet()) {
                String lingo_term = term_.getKey();
                Integer idf_value = term_.getValue();
                
-              // Double denom = Math.pow(10, idf_value);
-               // Double doc_count = 54 / denom;
-                  // pw.print(lingo_term+ "\t" + doc_count.intValue());
+
                    pw.print(lingo_term+ "\t" + idf_value);
                    pw.println();
          }

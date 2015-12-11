@@ -69,10 +69,12 @@ public class CombinedLCS {
     {
         int smi1_n= smi1.length();
         int smi2_n = smi2.length();
+        String smi1temp = smi1;
         
         String commonSeq="";
+        String commonSeq2="";
         
-        if(smi1.length() < smi2.length())
+        if(smi1.length() <= smi2.length())
         {
             while(smi1.length() >=0)
             {
@@ -88,7 +90,7 @@ public class CombinedLCS {
                 }
             }
         }
-        else 
+        else if(smi2.length() < smi1.length())
         {
             while(smi2.length()>=0)
             {
@@ -103,6 +105,29 @@ public class CombinedLCS {
                 }
             }
         }
+        
+        if(smi1temp.length() == smi2.length() && !smi1.equals(smi2))
+        {
+        	
+        	 //COMPUTE 2
+        	 while(smi2.length()>=0)
+             {
+                 if(smi1temp.contains(smi2))
+                 {
+                     commonSeq2=smi2;
+                     break;
+                 }
+                 else
+                 {
+                     smi2= smi2.substring(0,smi2.length()-1);
+                 }
+             }
+        	 
+        	
+        	if(commonSeq.length() < commonSeq2.length()) 
+        		commonSeq = commonSeq2;
+        }
+
         
         double sim_score = Double.valueOf(Math.pow(commonSeq.length(), 2)) / Double.valueOf(smi1_n * smi2_n);
         
@@ -160,7 +185,6 @@ public class CombinedLCS {
                     for (int i = 0; i < smiles.length()-(q-1); i++) {
 
                         String sub= smiles.substring(i,i+q);
-                        //System.out.println(sub);
 
                         if(!subsList.contains(sub))
                             subsList.add(sub);
