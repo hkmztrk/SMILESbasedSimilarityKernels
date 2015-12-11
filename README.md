@@ -18,6 +18,6 @@ data folder contains the chemical data that is used.
 	
 	nr-smi_u: contains unique smiles created from mol files of enzyme data set
 	
-	sim_matrix_u: contains similarity matrices created by SMILES based algorithms.
+	sim_matrix: contains similarity matrices created by SMILES based algorithms.
 	
 source code folder contains java source code.
