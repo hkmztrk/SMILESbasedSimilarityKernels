@@ -25,7 +25,9 @@ public class SMILESKernels {
    
      public static ArrayList<String> smiles = new ArrayList<>();
      public  static ArrayList<String> compounds = new ArrayList<>();
-     public static String folderpath = "..\\data\\"; /*put the data under SMILESKernels folder*/
+     public static String folderpath = ".\\data\\"; /*put the data folder under SMILESKernels folder*/
+     public static String outputpath = ".\\simmatrix\\"; /*put the data folder under SMILESKernels folder*/
+
      
     public static void main(String[] args) throws IOException, Exception {
 
@@ -144,7 +146,7 @@ public class SMILESKernels {
                     }
                  }
 
-                 writeSimMatrix(sim_Matrix, smiles.size()+1, folderpath + "\\sim_matrix\\", ligkernel_name+ "_"+ folder_name + "_simmat_dc.txt");
+                 writeSimMatrix(sim_Matrix, smiles.size()+1, outputpath + "\\", ligkernel_name+ "_"+ folder_name + "_simmat_dc.txt");
                 
              }
         }
