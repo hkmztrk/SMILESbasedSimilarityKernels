@@ -1,4 +1,6 @@
 # SMILESbasedSimilarityKernels
+
+Source code containing different SMILES similarity functions written in Java, Eclipse.
 ****************************************************************
 
 # Folders 
