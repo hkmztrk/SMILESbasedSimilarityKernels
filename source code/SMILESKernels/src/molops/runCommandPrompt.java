@@ -16,8 +16,8 @@ public class runCommandPrompt {
     	
         long startTime = System.currentTimeMillis();
         
-    	String outputPath = "simcomp1" +folder_name +".txt";
-    	String folderPath = "kcfs\\"+folder_name + "\\";
+    	String outputPath = "simcomp1" +foldername +".txt";
+    	String folderPath = "kcfs\\"+foldername + "\\";
     	
     	
     	FileWriter fw = new FileWriter(outputPath);

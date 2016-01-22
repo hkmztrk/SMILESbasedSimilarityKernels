@@ -6,9 +6,9 @@
 
 package smileskernels;
 
-import java.io.FileWriter;
+//import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -134,7 +134,7 @@ public class TFIDF {
      
     }
     
-    private void writeIDFtable() throws IOException
+ /*   private void writeIDFtable() throws IOException
     {
          FileWriter fw = new FileWriter("doc_num_ic.txt");
         PrintWriter pw = new PrintWriter(fw);
@@ -149,5 +149,5 @@ public class TFIDF {
          }
          
          pw.close();
-    }
+    }*/
 }

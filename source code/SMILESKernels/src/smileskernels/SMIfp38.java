@@ -78,7 +78,7 @@ public class SMIfp38 { /* Array size 38*/
             RingIdx[i] = 0; 
             } 
             
-            int PerCent = 0; 
+            //int PerCent = 0; 
             for (int i = 0; i < SMILES.length(); i++) {
             char ThisChar = SMILES.charAt(i); 
             /* Next Character in SMILES has to be considered*/ 

@@ -13,7 +13,7 @@ import ioops.readSMILES;
 import java.io.*;
 import java.util.*;
 
-import molops.runCommandPrompt;
+//import molops.runCommandPrompt;
 
 
 /**
@@ -26,14 +26,15 @@ public class SMILESKernels {
      public static ArrayList<String> smiles = new ArrayList<>();
      public  static ArrayList<String> compounds = new ArrayList<>();
      public static String folderpath = ".\\data\\"; /*put the data folder under SMILESKernels folder*/
-     public static String outputpath = ".\\simmatrix\\"; /*put the data folder under SMILESKernels folder*/
+     public static String outputpath = ".\\simmatrix\\"; /*results are gathered here*/
+     public static int lingoLen = 4; /*change LINGO length for TF methods*/
 
      
     public static void main(String[] args) throws IOException, Exception {
 
     	
     	//runCommandPrompt.SimcompTool();
-    	
+    	 long startTime = System.currentTimeMillis();
 
         String [] ligKers = {"edit", "substring", "lingo3", "lingo4", "lingo5", "smifp34Man","smifp34Tan", 
 			     "smifp38Man", "smifp38Tan", "NLCS", "HLCS", "TF", "TFIDF"};
@@ -56,8 +57,8 @@ public class SMILESKernels {
 
                 readSMILES.readSMILESfromFolder(folderpath + folder_name + " - smi_u\\", compounds, smiles);
   
-                 TFIDF tfidfKer = new TFIDF(smiles, 4, folder_name); // LINGO = 5
-                 TF tfKer = new TF(smiles,4);
+                 TFIDF tfidfKer = new TFIDF(smiles, lingoLen); 
+                 TF tfKer = new TF(smiles,lingoLen);
                  SMIfp38 smifp38Ker = new SMIfp38(); 
                  SMIfp34 smifp34Ker = new SMIfp34(); 
                  SubstringKernel subKer = new SubstringKernel();
@@ -83,9 +84,6 @@ public class SMILESKernels {
                             case "edit":
                                  sim_score = distance.edit.editDistance(smiles1, smiles2); 
                                  break;
-                            case "editlingo":
-                                sim_score = distance.edit.editDistanceLINGO(smiles1, smiles2); 
-                                break;
                              case "substring":
                                  sim_score = subKer.substringKernelSim(smiles1, smiles2); // KERNEL #1
                                  break;

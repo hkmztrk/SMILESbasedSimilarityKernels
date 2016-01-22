@@ -6,9 +6,9 @@
 
 package smileskernels;
 
-import java.io.FileWriter;
+//import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -175,7 +175,7 @@ public  class LINGO {
     }
        
        
-       private void writeDictionary(Map<String, Integer> lingos, String path, String filename) throws IOException
+   /*    private void writeDictionary(Map<String, Integer> lingos, String path, String filename) throws IOException
        {
             FileWriter fw = new FileWriter(path+"//"+filename+".txt");
             
@@ -189,7 +189,7 @@ public  class LINGO {
               pw.println();
           }
       }
-       }
+       }*/
        
 
     
