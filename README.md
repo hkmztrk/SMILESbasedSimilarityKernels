@@ -29,5 +29,10 @@ source code folder contains java source code.
 
 # How to Run the Code
 
+##Input
+
+##Output
+
+
 
 
