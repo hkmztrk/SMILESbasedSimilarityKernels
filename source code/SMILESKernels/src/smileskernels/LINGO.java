@@ -66,7 +66,6 @@ public  class LINGO {
     
   
     
-    /*TO-DO: UNION of Arrays. completed*/
     
     private double calculateSim(Map<String, Integer> lingoArray1, Map<String, Integer> lingoArray2)
     {
@@ -192,45 +191,7 @@ public  class LINGO {
       }
        }
        
-      /* public double LINGOWeightedSim(String smiles1, String smiles2, int q)
-    {
-        double sim_score =0;
-        
-        Map<String, Integer> lingo1_ = findLINGOs(smiles1, q);
-        Map<String, Integer> lingo2_ = findLINGOs(smiles2, q);
 
-        sim_score = calculateWeightedSim(lingo1_, lingo2_);
-        
-        return sim_score;
-    }*/
-       
-         /*    private double calculateWeightedSim(Map<String, Integer> lingoArray1, Map<String, Integer> lingoArray2)
-    {
-        double sim =0;
-        
-       for (Map.Entry<String, Integer> lingo_ : lingoArray1.entrySet()) {
-           
-          String key = lingo_.getKey();
-          Integer freq1 = lingo_.getValue();
-          Integer freq2 = 0;
-          double weight = 0;
-                    
-          if(lingoArray2.containsKey(key))
-          {
-              
-                freq2= lingoArray2.get(key);  
-                weight = lingoWeights.get(key);
-
-          }
-          
-          double tanimoto = 1 - (Double.valueOf(Math.abs(freq1-freq2)) / Double.valueOf(Math.abs(freq1 + freq2))) ;
-          sim = sim + tanimoto*weight;
-
-        }
-        
-        return ( Double.valueOf(sim)/ Double.valueOf(lingoArray1.size()) );
-    }*/
-    
     
     
 
