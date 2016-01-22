@@ -1,23 +1,31 @@
 # SMILESbasedSimilarityKernels
 ****************************************************************
+
+# Folders 
+
 data folder contains the chemical data that is used.
 
-	e : contains mol files of enzyme data set retrieved from KEGG drug.
+- e : contains mol files of enzyme data set retrieved from KEGG drug.
 	
-	e-smi_u: contains unique smiles created from mol files of enzyme data set
+- e-smi_u: contains unique smiles created from mol files of enzyme data set
 	
-	gpcr: contains mol files of enzyme data set retrieved from KEGG drug.
+- gpcr: contains mol files of enzyme data set retrieved from KEGG drug.
 	
-	gpcr-smi_u: contains unique smiles created from mol files of enzyme data set
+- gpcr-smi_u: contains unique smiles created from mol files of enzyme data set
 	
-	ic: contains mol files of enzyme data set retrieved from KEGG drug.
+- ic: contains mol files of enzyme data set retrieved from KEGG drug.
 	
-	ic-smi_u: contains unique smiles created from mol files of enzyme data set
+- ic-smi_u: contains unique smiles created from mol files of enzyme data set
 	
-	nr: contains mol files of enzyme data set retrieved from KEGG drug.
+- nr: contains mol files of enzyme data set retrieved from KEGG drug.
 	
-	nr-smi_u: contains unique smiles created from mol files of enzyme data set
+- nr-smi_u: contains unique smiles created from mol files of enzyme data set
 	
-	sim_matrix: contains similarity matrices created by SMILES based algorithms.
+- sim_matrix: contains similarity matrices created by SMILES based algorithms.
 	
 source code folder contains java source code.
+
+# How to Run the Code
+
+
+
