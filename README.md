@@ -38,7 +38,7 @@ You can place your own folder (newFolder), containing SMILES files (.smi) under 
 Then you need to manually add the folder to SMILESKernels.java in the following line,
 
 	String[] dataset = {"e", "gpcr", "nr", "ic", "newFolder"};
-	or
+or
 	String[] dataset = {"newFolder"};
 
 
