@@ -28,8 +28,12 @@ data folder contains the chemical data that is used.
 source code folder contains java source code.
 
 # How to Run the Code
+You can open the project in Eclipse or NetBeans to run.
 
 ##Input
+You need to put data folder under source code/SMILESKernels folder for program the read data.
+You can place your own folder (newFolder), containing SMILES files (.smi) under data folder with name 
+
 
 ##Output
 
