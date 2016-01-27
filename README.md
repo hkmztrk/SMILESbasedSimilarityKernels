@@ -32,11 +32,19 @@ You can open the project in Eclipse or NetBeans to run.
 
 ##Input
 You need to put data folder under source code/SMILESKernels folder for program the read data.
-You can place your own folder (newFolder), containing SMILES files (.smi) under data folder with name 
+
+You can place your own folder (newFolder), containing SMILES files (.smi) under data folder with name newFolder-smi_u.
+
+Then you need to manually add the folder to SMILESKernels.java in the following line,
+
+	String[] dataset = {"e", "gpcr", "nr", "ic", "newFolder"};
+	or
+	String[] dataset = {"newFolder"};
 
 
 ##Output
 
+The program will produce text files containing each containing a similarity matrix of the given inputs under the "simmatrix" folder.
 
 
 
