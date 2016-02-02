@@ -27,6 +27,15 @@ data folder contains the chemical data that is used.
 	
 source code folder contains java source code.
 
+# How to Run the Jar File
+
+First, please place  "data" folder under the same directory with SMILESSim.jar and create an empty folder named "simmatrix" in the same directory.
+
+Then, you can run the code below in the command line,
+
+	java -jar SMILESSim.jar
+
+
 # How to Run the Source Code
 You can open the project in Eclipse or NetBeans to run.
 
@@ -48,10 +57,4 @@ or
 
 The program will produce text files containing each containing a similarity matrix of the given inputs under the "simmatrix" folder.
 
-# How to Run the Jar File
-
-First, please place  "data" folder under the same directory with SMILESSim.jar and create an empty folder named "simmatrix" in the same directory.
-
-Then, you can run the code below in the command line,
-	java -jar SMILESSim.jar
 
