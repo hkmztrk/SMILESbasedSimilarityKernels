@@ -5,7 +5,7 @@ Source code containing different SMILES similarity functions written in Java, Ec
 
 # Folders 
 
-data folder contains the chemical data that is used.
+"data" folder contains the chemical data that is used.
 
 - e : contains mol files of enzyme data set retrieved from KEGG drug.
 	
@@ -25,7 +25,7 @@ data folder contains the chemical data that is used.
 	
 - sim_matrix: contains similarity matrices created by SMILES based algorithms.
 	
-source code folder contains java source code.
+"source code" folder contains java source code.
 
 # How to Run the Jar File
 
