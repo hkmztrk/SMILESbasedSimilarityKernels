@@ -29,11 +29,12 @@ source code folder contains java source code.
 
 # How to Run the Jar File
 
-First, please place  "data" folder under the same directory with SMILESSim.jar and create an empty folder named "simmatrix" in the same directory.
+First, please place "data" folder under the same directory with SMILESSim.jar.
 
 Then, you can run the code below in the command line,
 
 	java -jar SMILESSim.jar
+	
 
 
 # How to Run the Source Code
