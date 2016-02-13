@@ -13,6 +13,8 @@ import ioops.readSMILES;
 import java.io.*;
 import java.util.*;
 
+import org.omg.CORBA.Environment;
+
 //import molops.runCommandPrompt;
 
 
@@ -38,9 +40,21 @@ public class SMILESKernels {
 
         String [] ligKers = {"edit", "substring", "lingo3", "lingo4", "lingo5", "smifp34Man","smifp34Tan", 
 			     "smifp38Man", "smifp38Tan", "NLCS", "HLCS", "TF", "TFIDF"};
-
+       
+      
+       String[] dataset = {"e", "gpcr", "nr", "ic"};
+       if(args.length > 0 && args.length == 1)
+       {
+    	   
+    	   dataset = new String[1];
+    	   dataset[0] = args[0].toString();
+       }
+       else if(args.length > 0 && args.length!=1)
+       {
+    	   System.out.println("Warning: you can only pass a single argument at a time.");
+       }
+      
      
-        String[] dataset = {"e", "gpcr", "nr", "ic"};
         
 
         for (String ligkernel_name : ligKers) {
@@ -55,7 +69,7 @@ public class SMILESKernels {
                  
                
 
-                readSMILES.readSMILESfromFolder(folderpath + folder_name + " - smi_u\\", compounds, smiles);
+                readSMILES.readSMILESfromFolder(folderpath + folder_name + "\\", compounds, smiles);
   
                  TFIDF tfidfKer = new TFIDF(smiles, lingoLen); 
                  TF tfKer = new TF(smiles,lingoLen);
@@ -144,6 +158,13 @@ public class SMILESKernels {
                     }
                  }
 
+                                 
+                 File dir = new File(outputpath);
+                 if(!dir.exists())
+                 {
+                 dir.mkdir();
+                 }
+                 
                  writeSimMatrix(sim_Matrix, smiles.size()+1, outputpath + "\\", ligkernel_name+ "_"+ folder_name + "_simmat_dc.txt");
                 
              }
