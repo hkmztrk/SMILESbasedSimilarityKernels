@@ -21,9 +21,7 @@ Source code containing different SMILES similarity functions written in Java, Ec
 
 # How to Run the Jar File
 
-First, please place "data" folder under the same directory with SMILESSim.jar.
-
-Then, you can run the code below in the command line to see the results for the four data sets,
+First, please place "data" folder under the same directory with SMILESSim.jar. Then, you can run the code below in the command line to see the results for the four data sets of [Yamanishi et al.](https://academic.oup.com/bioinformatics/article/24/13/i232/231871) (enzyme, gpcr, nuclear receptors, ion channels),
 
 	java -jar SMILESSimv2.jar
 
