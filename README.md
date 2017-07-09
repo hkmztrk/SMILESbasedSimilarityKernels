@@ -43,7 +43,7 @@ To see the available functions:
 # How to Run the Source Code
 You can open the project in Eclipse or NetBeans to run.
 
-##Input
+## Input
 You need to put data folder under source code/SMILESKernels folder for program the read data.
 
 You can place your own folder (newFolder), containing SMILES files (.smi) under data folder with name newFolder.
