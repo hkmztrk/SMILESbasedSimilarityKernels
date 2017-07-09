@@ -57,8 +57,13 @@ or
 	String[] dataset = {"newFolder"};
 
 
-##Output
+## Output
 
 The program will produce text files containing a similarity matrix of the given inputs under the "simmatrix" folder for each function.
+
+
+### Citation to this work:
+
+Öztürk, Hakime, Elif Ozkirimli, and Arzucan Özgür. "A comparative study of SMILES-based compound similarity functions for drug-target interaction prediction." BMC bioinformatics 17.1 (2016): 128.
 
 
