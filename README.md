@@ -25,12 +25,21 @@ First, please place "data" folder under the same directory with SMILESSim.jar.
 
 Then, you can run the code below in the command line to see the results for the four data sets,
 
-	java -jar SMILESSim.jar
+	java -jar SMILESSimv2.jar
 
-If you want to calculate similarity of your own SMILES set, then you have to put SMILES files (.smi) under data folder with name newFolder. Then you can run the code below in the command line,
+If you want to calculate similarity of your own SMILES set, then you have to put SMILES files (.smi) under your folder. Then you can run the code below in the command line. This command computes similarity for 13 different similarity functions.
 
-	java -jar SMILESSim.jar newFolder
+	java -jar SMILESSimv2.jar [yourfoldername]
+
+You can also choose to run only a function of your choice.
+
 	
+	java -jar SMILESSimv2.jar [yourfoldername] [functionname]
+	
+To see the available functions:
+
+	java -jar SMILESSimv2.jar
+
 
 
 # How to Run the Source Code
@@ -52,6 +61,6 @@ or
 
 ##Output
 
-The program will produce text files containing each containing a similarity matrix of the given inputs under the "simmatrix" folder.
+The program will produce text files containing a similarity matrix of the given inputs under the "simmatrix" folder for each function.
 
 
